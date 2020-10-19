@@ -26,9 +26,6 @@ public class AppliedArithmetics {
             command = scanner.nextLine();
         }
 
-        numbers.stream()
-                .forEach(e -> System.out.print(e + " "));
-
     }
 
     private static Function<Integer, Integer> configured(String command) {
@@ -48,7 +45,11 @@ public class AppliedArithmetics {
 
                 break;
             case "print":
-                result = n -> n;
+                result = n -> {
+                    System.out.print(n + " ");
+
+                    return n;
+                };
 
                 break;
         }
